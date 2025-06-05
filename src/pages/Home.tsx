@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Clock, Trophy, Users, Zap, Code2, MapPin, Cpu, Database, Globe, Terminal, GitBranch, Rocket } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, Trophy, Users, Zap, Code2, MapPin } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import MatrixRain from '../components/MatrixRain';
 import ThreeScene from '../components/ThreeScene';
@@ -17,49 +17,31 @@ const Home = () => {
     {
       icon: <Clock className="w-8 h-8" />,
       title: "6 Hours",
-      description: "Intense coding sprint",
-      color: "text-vibe-green"
+      description: "Intense coding sprint"
     },
     {
       icon: <Trophy className="w-8 h-8" />,
       title: "FREE Entry",
-      description: "No registration fees",
-      color: "text-vibe-green-bright"
+      description: "No registration fees"
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "500+",
-      description: "Developers expected",
-      color: "text-vibe-green-neon"
+      description: "Developers expected"
     },
     {
       icon: <Code2 className="w-8 h-8" />,
       title: "All Levels",
-      description: "Beginner to expert",
-      color: "text-vibe-green-soft"
+      description: "Beginner to expert"
     }
   ];
 
   const tracks = [
-    { name: "AI & Machine Learning", color: "bg-vibe-green", icon: <Cpu className="w-6 h-6" /> },
-    { name: "Web3 & Blockchain", color: "bg-vibe-green-bright", icon: <GitBranch className="w-6 h-6" /> },
-    { name: "Sustainability Tech", color: "bg-vibe-green-soft", icon: <Globe className="w-6 h-6" /> },
-    { name: "FinTech Innovation", color: "bg-vibe-green-neon", icon: <Database className="w-6 h-6" /> },
-    { name: "Open Innovation", color: "bg-vibe-green-dark", icon: <Rocket className="w-6 h-6" /> }
-  ];
-
-  const stats = [
-    { number: "500+", label: "Developers", color: "text-vibe-green" },
-    { number: "$10K", label: "Prize Pool", color: "text-vibe-green-bright" },
-    { number: "5", label: "Tracks", color: "text-vibe-green-neon" },
-    { number: "24", label: "Mentors", color: "text-vibe-green-soft" }
-  ];
-
-  const sponsors = [
-    { name: "TechCorp", tier: "Platinum" },
-    { name: "DevTools Inc", tier: "Gold" },
-    { name: "CloudBase", tier: "Silver" },
-    { name: "StartupHub", tier: "Bronze" }
+    { name: "AI & Machine Learning", color: "bg-blue-500" },
+    { name: "Web3 & Blockchain", color: "bg-purple-500" },
+    { name: "Sustainability Tech", color: "bg-green-500" },
+    { name: "FinTech Innovation", color: "bg-yellow-500" },
+    { name: "Open Innovation", color: "bg-red-500" }
   ];
 
   return (
@@ -74,7 +56,7 @@ const Home = () => {
         {/* Clean center background */}
         <div className="absolute inset-0 center-clean-bg z-5"></div>
         
-        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <div data-aos="fade-up" data-aos-duration="1000">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-mono font-bold mb-6 leading-tight">
               <span className="text-vibe-green glow-text">CODESTORM</span>
@@ -82,7 +64,7 @@ const Home = () => {
               <span className="text-white">ELITE</span>
             </h1>
             
-            <div className="text-xl md:text-2xl font-mono text-vibe-green-bright mb-4 animate-pulse-green flex items-center justify-center space-x-2">
+            <div className="text-xl md:text-2xl font-mono text-vibe-green mb-4 animate-pulse-green flex items-center justify-center space-x-2">
               <CodingLoader size="sm" />
               <span>6 HOURS HACKATHON</span>
               <CodingLoader size="sm" />
@@ -98,10 +80,10 @@ const Home = () => {
             </p>
           </div>
           
-          <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+          <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               to="/enrollment"
-              className="group bg-vibe-green text-black px-8 py-4 rounded-lg text-lg font-bold hover:bg-vibe-green-bright transition-all duration-300 hover:scale-105 animate-glow-soft flex items-center space-x-2"
+              className="group bg-vibe-green text-black px-8 py-4 rounded-lg text-lg font-bold hover:bg-white transition-all duration-300 hover:scale-105 animate-glow-soft flex items-center space-x-2"
             >
               <span>Join the Storm - FREE</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -109,35 +91,16 @@ const Home = () => {
             
             <Link
               to="/about"
-              className="glass-effect px-8 py-4 rounded-lg text-lg font-medium hover:bg-vibe-green-neon hover:text-black transition-all duration-300 hover:scale-105 flex items-center space-x-2"
+              className="glass-effect px-8 py-4 rounded-lg text-lg font-medium hover:bg-vibe-green hover:text-black transition-all duration-300 hover:scale-105 flex items-center space-x-2"
             >
               <span>Learn More</span>
             </Link>
           </div>
           
-          {/* Mac Terminal Code Preview */}
-          <div data-aos="fade-up" data-aos-delay="400" className="max-w-2xl mx-auto mb-16">
-            <div className="mac-terminal">
-              <div className="mac-header flex items-center">
-                <div className="mac-dot red"></div>
-                <div className="mac-dot yellow"></div>
-                <div className="mac-dot green"></div>
-                <span className="text-gray-400 text-sm ml-4 font-mono">~/codestorm-elite</span>
-              </div>
-              <div className="p-4 terminal-text">
-                <div className="mb-2">$ npm create hackathon-project</div>
-                <div className="mb-2 text-vibe-green-bright">✓ Creating amazing solutions...</div>
-                <div className="mb-2">$ git add innovation</div>
-                <div className="mb-2">$ git commit -m "Ready to storm! 🚀"</div>
-                <div className="typing-effect">$ npm run win-hackathon</div>
-              </div>
-            </div>
-          </div>
-          
-          <div data-aos="fade-up" data-aos-delay="600" className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div data-aos="fade-up" data-aos-delay="600" className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="glass-effect p-6 rounded-lg text-center hover:bg-vibe-green-dark hover:text-black transition-all duration-300 hover:scale-105">
-                <div className={`${feature.color} mb-3 flex justify-center`}>
+              <div key={index} className="glass-effect p-6 rounded-lg text-center hover:bg-vibe-green hover:text-black transition-all duration-300 hover:scale-105">
+                <div className="text-vibe-green mb-3 flex justify-center">
                   {feature.icon}
                 </div>
                 <div className="text-2xl font-bold mb-2">{feature.title}</div>
@@ -155,38 +118,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-vibe-gray-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="text-center">
-                <div className={`text-4xl md:text-5xl font-bold ${stat.color} mb-2`}>
-                  {stat.number}
-                </div>
-                <div className="text-gray-400 font-mono">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Event Details Preview */}
-      <section className="py-20 bg-gradient-to-b from-vibe-gray-dark to-vibe-gray">
+      <section className="py-20 bg-gradient-to-b from-vibe-black to-vibe-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-4xl md:text-5xl font-mono font-bold mb-6">
-              <span className="text-vibe-green-bright">EVENT</span> <span className="text-white">DETAILS</span>
+              <span className="text-vibe-green">EVENT</span> <span className="text-white">DETAILS</span>
             </h2>
             <CodingLoader className="mb-4" />
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Join the elite coding storm at TechHub Silicon Valley
+              Join the elite coding storm
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div data-aos="fade-up" data-aos-delay="100" className="glass-effect p-8 rounded-lg hover:scale-105 transition-transform duration-300">
-              <Calendar className="w-12 h-12 text-vibe-green-neon mb-4" />
+              <Calendar className="w-12 h-12 text-vibe-green mb-4" />
               <h3 className="text-2xl font-bold mb-4">When</h3>
               <p className="text-gray-300">
                 <strong>Date:</strong> March 15, 2025<br />
@@ -196,12 +143,12 @@ const Home = () => {
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200" className="glass-effect p-8 rounded-lg hover:scale-105 transition-transform duration-300">
-              <MapPin className="w-12 h-12 text-vibe-green-bright mb-4" />
+              <MapPin className="w-12 h-12 text-vibe-green mb-4" />
               <h3 className="text-2xl font-bold mb-4">Where</h3>
               <p className="text-gray-300">
                 <strong>Venue:</strong> TechHub Silicon Valley<br />
-                <strong>Address:</strong> 123 Innovation Drive, Palo Alto<br />
-                <strong>Virtual:</strong> Global participation available
+                <strong>Address:</strong> 123 Innovation Drive<br />
+                <strong>Virtual:</strong> Global participation
               </p>
             </div>
 
@@ -215,31 +162,6 @@ const Home = () => {
               </p>
             </div>
           </div>
-
-          {/* Additional Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            <div data-aos="fade-up" data-aos-delay="400" className="glass-effect p-6 rounded-lg">
-              <Terminal className="w-8 h-8 text-vibe-green-soft mb-4" />
-              <h3 className="text-xl font-bold mb-3">What to Bring</h3>
-              <ul className="text-gray-300 space-y-2">
-                <li>• Your laptop with development environment</li>
-                <li>• Chargers and accessories</li>
-                <li>• Creative mindset and problem-solving skills</li>
-                <li>• Team spirit (optional team formation)</li>
-              </ul>
-            </div>
-
-            <div data-aos="fade-up" data-aos-delay="500" className="glass-effect p-6 rounded-lg">
-              <Zap className="w-8 h-8 text-vibe-green-dark mb-4" />
-              <h3 className="text-xl font-bold mb-3">What We Provide</h3>
-              <ul className="text-gray-300 space-y-2">
-                <li>• Free meals and refreshments</li>
-                <li>• High-speed internet and power outlets</li>
-                <li>• Mentorship from industry experts</li>
-                <li>• APIs and development resources</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -248,7 +170,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="text-4xl md:text-5xl font-mono font-bold mb-6">
-              <span className="text-vibe-green-neon">CODING</span> <span className="text-white">TRACKS</span>
+              <span className="text-vibe-green">CODING</span> <span className="text-white">TRACKS</span>
             </h2>
             <p className="text-xl text-gray-300">
               Choose your challenge and build something amazing
@@ -263,43 +185,11 @@ const Home = () => {
                 data-aos-delay={index * 100}
                 className="group relative glass-effect p-6 rounded-lg hover:scale-105 transition-all duration-300 cursor-pointer"
               >
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className={`w-10 h-10 ${track.color} rounded-lg flex items-center justify-center text-black`}>
-                    {track.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white group-hover:text-vibe-green transition-colors">
-                    {track.name}
-                  </h3>
-                </div>
+                <div className={`w-4 h-4 ${track.color} rounded-full mb-4`}></div>
+                <h3 className="text-xl font-bold text-white group-hover:text-vibe-green transition-colors">
+                  {track.name}
+                </h3>
                 <div className="absolute inset-0 border-2 border-transparent group-hover:border-vibe-green rounded-lg transition-colors"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Sponsors Section */}
-      <section className="py-20 bg-vibe-gray-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <h2 className="text-4xl md:text-5xl font-mono font-bold mb-6">
-              <span className="text-white">OUR</span> <span className="text-vibe-green-soft">SPONSORS</span>
-            </h2>
-            <p className="text-xl text-gray-300">
-              Powered by industry leaders
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {sponsors.map((sponsor, index) => (
-              <div
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-                className="glass-effect p-6 rounded-lg text-center hover:scale-105 transition-transform duration-300"
-              >
-                <div className="text-2xl font-bold text-vibe-green mb-2">{sponsor.name}</div>
-                <div className="text-sm text-gray-400">{sponsor.tier}</div>
               </div>
             ))}
           </div>
@@ -318,9 +208,9 @@ const Home = () => {
             </p>
             <Link
               to="/enrollment"
-              className="inline-flex items-center space-x-3 bg-vibe-green text-black px-12 py-4 rounded-lg text-xl font-bold hover:bg-vibe-green-bright transition-all duration-300 hover:scale-105 animate-glow"
+              className="inline-flex items-center space-x-3 bg-vibe-green text-black px-12 py-4 rounded-lg text-xl font-bold hover:bg-white transition-all duration-300 hover:scale-105 animate-glow"
             >
-              <span>Enroll Now - FREE</span>
+              <span>Enroll Now</span>
               <ArrowRight className="w-6 h-6" />
             </Link>
           </div>
