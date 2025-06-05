@@ -1,15 +1,16 @@
 
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Clock, Trophy, Users, Zap, Code2 } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, Trophy, Users, Zap, Code2, MapPin } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import MatrixRain from '../components/MatrixRain';
 import ThreeScene from '../components/ThreeScene';
 import Footer from '../components/Footer';
+import CodingLoader from '../components/CodingLoader';
 
 const Home = () => {
   useEffect(() => {
-    document.title = 'Vibe Coding - 6 Hours Hackathon | Code. Create. Compete.';
+    document.title = 'CodeStorm Elite - 6 Hours Hackathon | Code. Create. Compete.';
   }, []);
 
   const features = [
@@ -20,8 +21,8 @@ const Home = () => {
     },
     {
       icon: <Trophy className="w-8 h-8" />,
-      title: "$5,000",
-      description: "Prize pool"
+      title: "FREE Entry",
+      description: "No registration fees"
     },
     {
       icon: <Users className="w-8 h-8" />,
@@ -52,16 +53,21 @@ const Home = () => {
         <MatrixRain />
         <ThreeScene />
         
+        {/* Clean center background */}
+        <div className="absolute inset-0 center-clean-bg z-5"></div>
+        
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           <div data-aos="fade-up" data-aos-duration="1000">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-mono font-bold mb-6 leading-tight">
-              <span className="text-vibe-green glow-text">VIBE</span>
+              <span className="text-vibe-green glow-text">CODESTORM</span>
               <br />
-              <span className="text-white">CODING</span>
+              <span className="text-white">ELITE</span>
             </h1>
             
-            <div className="text-xl md:text-2xl font-mono text-vibe-green mb-4 animate-pulse-green">
-              6 HOURS HACKATHON
+            <div className="text-xl md:text-2xl font-mono text-vibe-green mb-4 animate-pulse-green flex items-center justify-center space-x-2">
+              <CodingLoader size="sm" />
+              <span>6 HOURS HACKATHON</span>
+              <CodingLoader size="sm" />
             </div>
             
             <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-white">
@@ -69,17 +75,17 @@ const Home = () => {
             </p>
             
             <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Unleash Your Coding Vibe in the ultimate 6-hour hackathon experience. 
-              Build innovative solutions, compete with top developers, and win amazing prizes.
+              Storm the coding world in the ultimate 6-hour hackathon experience. 
+              Build innovative solutions, compete with elite developers, and claim your victory.
             </p>
           </div>
           
           <div data-aos="fade-up" data-aos-delay="300" className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               to="/enrollment"
-              className="group bg-vibe-green text-black px-8 py-4 rounded-lg text-lg font-bold hover:bg-white transition-all duration-300 hover:scale-105 animate-glow flex items-center space-x-2"
+              className="group bg-vibe-green text-black px-8 py-4 rounded-lg text-lg font-bold hover:bg-white transition-all duration-300 hover:scale-105 animate-glow-soft flex items-center space-x-2"
             >
-              <span>Join the Hackathon</span>
+              <span>Join the Storm - FREE</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             
@@ -119,8 +125,9 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-mono font-bold mb-6">
               <span className="text-vibe-green">EVENT</span> <span className="text-white">DETAILS</span>
             </h2>
+            <CodingLoader className="mb-4" />
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Join us for an unforgettable coding experience
+              Join the elite coding storm
             </p>
           </div>
 
@@ -136,12 +143,12 @@ const Home = () => {
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200" className="glass-effect p-8 rounded-lg hover:scale-105 transition-transform duration-300">
-              <Zap className="w-12 h-12 text-vibe-green mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Format</h3>
+              <MapPin className="w-12 h-12 text-vibe-green mb-4" />
+              <h3 className="text-2xl font-bold mb-4">Where</h3>
               <p className="text-gray-300">
-                <strong>Mode:</strong> Hybrid Event<br />
-                <strong>Virtual:</strong> Global participation<br />
-                <strong>In-Person:</strong> Tech Hub locations
+                <strong>Venue:</strong> TechHub Silicon Valley<br />
+                <strong>Address:</strong> 123 Innovation Drive<br />
+                <strong>Virtual:</strong> Global participation
               </p>
             </div>
 
@@ -149,9 +156,9 @@ const Home = () => {
               <Trophy className="w-12 h-12 text-vibe-green mb-4" />
               <h3 className="text-2xl font-bold mb-4">Prizes</h3>
               <p className="text-gray-300">
-                <strong>1st Place:</strong> $2,500<br />
-                <strong>2nd Place:</strong> $1,500<br />
-                <strong>3rd Place:</strong> $1,000 + Swag
+                <strong>1st Place:</strong> $2,500 + Trophy<br />
+                <strong>2nd Place:</strong> $1,500 + Medal<br />
+                <strong>3rd Place:</strong> $1,000 + Certificate
               </p>
             </div>
           </div>

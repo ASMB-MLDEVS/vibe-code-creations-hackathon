@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Zap } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navigation = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Timeline', path: '/timeline' },
-    { name: 'Enrollment', path: '/enrollment' }
+    { name: 'Problems', path: '/problems' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -34,10 +34,10 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="p-2 bg-vibe-green rounded-lg group-hover:animate-pulse">
-              <Code2 className="w-6 h-6 text-black" />
+              <Zap className="w-6 h-6 text-black" />
             </div>
             <span className="text-xl font-mono font-bold text-vibe-green glow-text">
-              Vibe Coding
+              CodeStorm Elite
             </span>
           </Link>
 
@@ -55,15 +55,15 @@ const Navigation = () => {
               >
                 {item.name}
                 {isActive(item.path) && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-vibe-green animate-glow"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-vibe-green animate-glow-soft"></div>
                 )}
               </Link>
             ))}
             <Link
               to="/enrollment"
-              className="bg-vibe-green text-black px-6 py-2 rounded-lg font-medium hover:bg-white transition-all duration-300 hover:scale-105 animate-glow"
+              className="bg-vibe-green text-black px-6 py-2 rounded-lg font-medium hover:bg-white transition-all duration-300 hover:scale-105 animate-glow-soft"
             >
-              Join Now
+              Join Now - FREE
             </Link>
           </div>
 
@@ -99,7 +99,7 @@ const Navigation = () => {
                 onClick={() => setIsOpen(false)}
                 className="bg-vibe-green text-black px-6 py-2 rounded-lg font-medium hover:bg-white transition-all duration-300 mt-4"
               >
-                Join Now
+                Join Now - FREE
               </Link>
             </div>
           </div>

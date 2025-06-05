@@ -4,19 +4,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vibe Coding - 6 Hours Hackathon</title>
-    <meta name="description" content="Join the ultimate 6-hour coding hackathon. Code. Create. Compete. Unleash Your Coding Vibe!" />
-    <meta name="author" content="Vibe Coding Team" />
+    <title>CodeStorm Elite - 6 Hours Hackathon</title>
+    <meta name="description" content="Join CodeStorm Elite - the ultimate 6-hour coding hackathon. Code. Create. Compete. Storm the coding world!" />
+    <meta name="author" content="CodeStorm Elite Team" />
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Vibe Coding - 6 Hours Hackathon" />
-    <meta property="og:description" content="Join the ultimate 6-hour coding hackathon. Code. Create. Compete. Unleash Your Coding Vibe!" />
+    <meta property="og:title" content="CodeStorm Elite - 6 Hours Hackathon" />
+    <meta property="og:description" content="Join CodeStorm Elite - the ultimate 6-hour coding hackathon. Code. Create. Compete. Storm the coding world!" />
     <meta property="og:type" content="website" />
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Vibe Coding - 6 Hours Hackathon" />
-    <meta name="twitter:description" content="Join the ultimate 6-hour coding hackathon. Code. Create. Compete. Unleash Your Coding Vibe!" />
+    <meta name="twitter:title" content="CodeStorm Elite - 6 Hours Hackathon" />
+    <meta name="twitter:description" content="Join CodeStorm Elite - the ultimate 6-hour coding hackathon. Code. Create. Compete. Storm the coding world!" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,20 +51,22 @@
             },
             animation: {
               'float': 'float 6s ease-in-out infinite',
-              'glow': 'glow 2s ease-in-out infinite alternate',
+              'glow-soft': 'glow-soft 2s ease-in-out infinite alternate',
               'matrix': 'matrix 20s linear infinite',
               'pulse-green': 'pulse-green 2s ease-in-out infinite',
               'slide-up': 'slide-up 0.8s ease-out',
-              'fade-in-delay': 'fade-in-delay 1s ease-out 0.3s both'
+              'fade-in-delay': 'fade-in-delay 1s ease-out 0.3s both',
+              'typing': 'typing 3.5s steps(40, end), blink-caret .75s step-end infinite',
+              'code-rain': 'code-rain 2s linear infinite'
             },
             keyframes: {
               float: {
                 '0%, 100%': { transform: 'translateY(0px)' },
                 '50%': { transform: 'translateY(-20px)' }
               },
-              glow: {
-                'from': { boxShadow: '0 0 20px #00FF00' },
-                'to': { boxShadow: '0 0 30px #00FF00, 0 0 40px #00FF00' }
+              'glow-soft': {
+                'from': { boxShadow: '0 0 5px #00FF00' },
+                'to': { boxShadow: '0 0 10px #00FF00, 0 0 15px #00FF00' }
               },
               matrix: {
                 '0%': { transform: 'translateY(-100%)' },
@@ -81,6 +83,19 @@
               'fade-in-delay': {
                 '0%': { opacity: '0', transform: 'translateY(30px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' }
+              },
+              typing: {
+                'from': { width: '0' },
+                'to': { width: '100%' }
+              },
+              'blink-caret': {
+                'from, to': { borderColor: 'transparent' },
+                '50%': { borderColor: '#00FF00' }
+              },
+              'code-rain': {
+                '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                '50%': { opacity: '1' },
+                '100%': { transform: 'translateY(20px)', opacity: '0' }
               }
             }
           }
@@ -90,7 +105,7 @@
     
     <style>
       .matrix-bg {
-        background: linear-gradient(45deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+        background: radial-gradient(ellipse at center, rgba(10, 10, 10, 0.8) 0%, rgba(0, 0, 0, 0.95) 60%, #000000 100%);
         position: relative;
         overflow: hidden;
       }
@@ -103,6 +118,7 @@
         height: calc(100% + 200px);
         pointer-events: none;
         z-index: 1;
+        opacity: 0.3;
       }
       
       .matrix-char {
@@ -110,7 +126,7 @@
         color: #00FF00;
         font-family: 'Fira Code', monospace;
         font-size: 14px;
-        opacity: 0.7;
+        opacity: 0.4;
         animation: matrix 20s linear infinite;
       }
       
@@ -119,22 +135,22 @@
         color: #00FF00;
         font-family: 'Fira Code', monospace;
         font-size: 12px;
-        opacity: 0.3;
+        opacity: 0.2;
         pointer-events: none;
       }
       
       .glow-text {
-        text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+        text-shadow: 0 0 5px #00FF00;
       }
       
       .glass-effect {
-        background: rgba(0, 0, 0, 0.7);
+        background: rgba(0, 0, 0, 0.8);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(0, 255, 0, 0.3);
+        border: 1px solid rgba(0, 255, 0, 0.2);
       }
       
       .nav-blur {
-        background: rgba(0, 0, 0, 0.9);
+        background: rgba(0, 0, 0, 0.95);
         backdrop-filter: blur(10px);
       }
       
@@ -146,6 +162,35 @@
         height: 100%;
         pointer-events: none;
         z-index: 2;
+        opacity: 0.6;
+      }
+
+      .coding-loader {
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+
+      .coding-loader::before {
+        content: '';
+        position: absolute;
+        border: 2px solid #00FF00;
+        border-radius: 50%;
+        border-top-color: transparent;
+        width: 16px;
+        height: 16px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .center-clean-bg {
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.7) 70%, transparent 100%);
       }
     </style>
   </head>

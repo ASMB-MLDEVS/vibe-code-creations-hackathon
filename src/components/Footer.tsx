@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Code2, Mail, Twitter, Github, MessageCircle } from 'lucide-react';
+import { Zap, Mail, Twitter, Github, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -12,14 +12,14 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="p-2 bg-vibe-green rounded-lg">
-                <Code2 className="w-6 h-6 text-black" />
+                <Zap className="w-6 h-6 text-black" />
               </div>
               <span className="text-xl font-mono font-bold text-vibe-green glow-text">
-                Vibe Coding
+                CodeStorm Elite
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Unleashing creativity through code. Join the ultimate 6-hour hackathon experience.
+              Storm the coding world. Join the ultimate 6-hour hackathon experience - completely FREE.
             </p>
           </div>
 
@@ -36,28 +36,24 @@ const Footer = () => {
               <Link to="/timeline" className="block text-gray-400 hover:text-vibe-green transition-colors">
                 Timeline
               </Link>
+              <Link to="/problems" className="block text-gray-400 hover:text-vibe-green transition-colors">
+                Problems
+              </Link>
               <Link to="/enrollment" className="block text-gray-400 hover:text-vibe-green transition-colors">
-                Enrollment
+                Free Registration
               </Link>
             </div>
           </div>
 
-          {/* Legal */}
+          {/* Event Info */}
           <div className="space-y-4">
-            <h3 className="text-white font-semibold">Legal</h3>
-            <div className="space-y-2">
-              <a href="#" className="block text-gray-400 hover:text-vibe-green transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-vibe-green transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-vibe-green transition-colors">
-                FAQs
-              </a>
-              <a href="#" className="block text-gray-400 hover:text-vibe-green transition-colors">
-                Code of Conduct
-              </a>
+            <h3 className="text-white font-semibold">Event Details</h3>
+            <div className="space-y-2 text-gray-400 text-sm">
+              <p>📅 March 15, 2025</p>
+              <p>⏰ 10:00 AM - 4:00 PM</p>
+              <p>📍 TechHub Silicon Valley</p>
+              <p>💰 100% FREE Entry</p>
+              <p>🏆 $5,000 Prize Pool</p>
             </div>
           </div>
 
@@ -66,11 +62,11 @@ const Footer = () => {
             <h3 className="text-white font-semibold">Connect</h3>
             <div className="space-y-3">
               <a 
-                href="mailto:hello@vibecoding.com" 
+                href="mailto:hello@codestormelite.com" 
                 className="flex items-center space-x-2 text-gray-400 hover:text-vibe-green transition-colors"
               >
                 <Mail size={16} />
-                <span>hello@vibecoding.com</span>
+                <span>hello@codestormelite.com</span>
               </a>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-vibe-green transition-colors hover:scale-110 transform">
@@ -89,10 +85,10 @@ const Footer = () => {
 
         <div className="border-t border-vibe-gray mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 Vibe Coding. All rights reserved.
+            © 2024 CodeStorm Elite. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-2 md:mt-0">
-            Powered by <span className="text-vibe-green font-mono">{'<developers/>'}</span>
+            Powered by <span className="text-vibe-green font-mono">{'<storm/developers>'}</span>
           </p>
         </div>
       </div>
