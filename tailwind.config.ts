@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Enhanced vibe colors with multiple neon green shades
+				'vibe-black': '#000000',
+				'vibe-green': '#00FF00',
+				'vibe-green-soft': '#22C55E',
+				'vibe-green-bright': '#39FF14',
+				'vibe-green-dark': '#00CC00',
+				'vibe-green-neon': '#0FFF50',
+				'vibe-gray': '#1F1F1F',
+				'vibe-gray-light': '#2A2A2A',
+				'vibe-gray-dark': '#0F0F0F'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

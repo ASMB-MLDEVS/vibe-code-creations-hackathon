@@ -33,7 +33,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-vibe-green rounded-lg group-hover:animate-pulse">
+            <div className="p-2 bg-vibe-green rounded-lg group-hover:bg-vibe-green-bright transition-colors duration-300">
               <Zap className="w-6 h-6 text-black" />
             </div>
             <span className="text-xl font-mono font-bold text-vibe-green glow-text">
@@ -49,19 +49,19 @@ const Navigation = () => {
                 to={item.path}
                 className={`relative px-3 py-2 font-medium transition-all duration-300 ${
                   isActive(item.path)
-                    ? 'text-vibe-green'
-                    : 'text-white hover:text-vibe-green'
+                    ? 'text-vibe-green-bright'
+                    : 'text-white hover:text-vibe-green-neon'
                 }`}
               >
                 {item.name}
                 {isActive(item.path) && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-vibe-green animate-glow-soft"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-vibe-green-bright animate-glow-soft"></div>
                 )}
               </Link>
             ))}
             <Link
               to="/enrollment"
-              className="bg-vibe-green text-black px-6 py-2 rounded-lg font-medium hover:bg-white transition-all duration-300 hover:scale-105 animate-glow-soft"
+              className="bg-vibe-green text-black px-6 py-2 rounded-lg font-medium hover:bg-vibe-green-bright transition-all duration-300 hover:scale-105 animate-glow-soft"
             >
               Join Now - FREE
             </Link>
@@ -70,7 +70,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-white hover:text-vibe-green transition-colors"
+            className="md:hidden p-2 text-white hover:text-vibe-green-neon transition-colors"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -87,8 +87,8 @@ const Navigation = () => {
                   onClick={() => setIsOpen(false)}
                   className={`px-3 py-2 font-medium transition-all duration-300 ${
                     isActive(item.path)
-                      ? 'text-vibe-green bg-vibe-gray rounded-lg'
-                      : 'text-white hover:text-vibe-green hover:bg-vibe-gray rounded-lg'
+                      ? 'text-vibe-green-bright bg-vibe-gray rounded-lg'
+                      : 'text-white hover:text-vibe-green-neon hover:bg-vibe-gray rounded-lg'
                   }`}
                 >
                   {item.name}
@@ -97,7 +97,7 @@ const Navigation = () => {
               <Link
                 to="/enrollment"
                 onClick={() => setIsOpen(false)}
-                className="bg-vibe-green text-black px-6 py-2 rounded-lg font-medium hover:bg-white transition-all duration-300 mt-4"
+                className="bg-vibe-green text-black px-6 py-2 rounded-lg font-medium hover:bg-vibe-green-bright transition-all duration-300 mt-4"
               >
                 Join Now - FREE
               </Link>
